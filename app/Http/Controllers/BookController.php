@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
+use DB;
 
 class BookController extends Controller
 {
@@ -14,9 +15,28 @@ class BookController extends Controller
      */
     public function index()
     {
-        //retrieve all books
-        $books = Book::all();
-        return view("books.index", compact("books"));
+        return view("books.index");
+    }
+
+    public function search(Request $request){
+        if($request->ajax()){
+            $books=DB::table('books')->where('name','LIKE','%'.$request->search."%")->get();
+            $output = '';
+            // if($books){
+            //     return Response($books);
+            // }
+            foreach ($books as $key => $book){
+                $output.='<tr>'.
+                            '<td>'.$book->name.'</td>'.
+                            '<td>'.$book->author.'</td>'.
+                            '<td>'.$book->publisher.'</td>'.
+                            '<td>'.$book->price.'</td>'.
+                            '<td>'.$book->isbn.'</td>'.
+                            '<td><img id="book_cover" src="'.$book->image_url.'"></td>'.
+                        '</tr>';
+            }
+            return Response($output);
+        }
     }
 
     /**

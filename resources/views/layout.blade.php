@@ -8,6 +8,7 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
   <link href="{{ asset('css/custom/custom.css') }}" rel="stylesheet" type="text/css" />
   <script src="{{ asset('js/app.js') }}" type="text/js"></script>
+  <script src="https://lib.baomitu.com/jquery/1.12.0/jquery.min.js"></script>
 </head>
 <body>
   <header> 
@@ -23,6 +24,10 @@
               <td class="value"><a href="/books"><img src="/images/cart.png">Cart</a></td> 
               <td class="value"><a href="/books"><img src="/images/login.png">Login</a></td> 
               <td class="value"><a href="/"><img src="/images/admin.png">Admin</a></td> 
+              <td id='search_input_tr'>
+                <input type="text" id='search' placeholder="Search">
+                <img src="/images/search_icon.png" class='search_icon'>
+              </td>
             </tr>
           </tbody>
         </table>

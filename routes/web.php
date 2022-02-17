@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'BookController@index');
 
-Route::resource('books','BookController');
+// Route::resource('books','BookController');
+
+Route::get('/books','BookController@search');
