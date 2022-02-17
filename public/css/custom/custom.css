@@ -169,6 +169,11 @@ a:focus {
 
 .container{
     width: 60rem;
+    background-color: #f7f7f7;
+}
+
+.bgw{
+    background-color: #fff;
 }
 
 /* 内容表格 */
@@ -192,6 +197,13 @@ a:focus {
     height: 200px;
 }
 
+/* 首页搜索结果表格 */
+#books_table{
+    margin-top: 0;
+    padding-top: 15px;
+    background-color: #f5f5f5;
+}
+
 
 /* 版权 */
 
@@ -199,8 +211,8 @@ a:focus {
     width: 100%;
     position: absolute;
     bottom: 0;
+    left: 0;
     color: #c8c8c8;
     font-size: 0.75rem;
     padding-top: 1.5625rem;
-    margin: 0 auto;
 }

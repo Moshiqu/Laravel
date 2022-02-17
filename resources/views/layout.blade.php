@@ -7,8 +7,10 @@
   <title>My Bookstore App using Laravel 6.x</title>
   <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
   <link href="{{ asset('css/custom/custom.css') }}" rel="stylesheet" type="text/css" />
+  <link href="{{ asset('js\sort\css\theme.default.min.css') }}" rel="stylesheet" type="text/css" />
   <script src="{{ asset('js/app.js') }}" type="text/js"></script>
-  <script src="https://lib.baomitu.com/jquery/1.12.0/jquery.min.js"></script>
+  <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+  <script src="{{ asset('js/sort/js/jquery.tablesorter.js') }}"></script>
 </head>
 <body>
   <header> 
@@ -18,7 +20,7 @@
             <tr class='table_left'>
               <td class="value" ><a href="/books"><img src="/images/logo.jpg" class='logo_box'/></a></td> 
             </tr>
-            <tr class='table_content container' valign="bottom">
+            <tr class='table_content container bgw' valign="bottom">
               <td class="value"><a href="/books"><img src="/images/home.png">Home</a></td> 
               <td class="value"><a href="/register"><img src="/images/register.png">Register</a></td> 
               <td class="value"><a href="/books"><img src="/images/cart.png">Cart</a></td> 

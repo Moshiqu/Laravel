@@ -22,20 +22,9 @@ class BookController extends Controller
         if($request->ajax()){
             $books=DB::table('books')->where('name','LIKE','%'.$request->search."%")->get();
             $output = '';
-            // if($books){
-            //     return Response($books);
-            // }
-            foreach ($books as $key => $book){
-                $output.='<tr>'.
-                            '<td>'.$book->name.'</td>'.
-                            '<td>'.$book->author.'</td>'.
-                            '<td>'.$book->publisher.'</td>'.
-                            '<td>'.$book->price.'</td>'.
-                            '<td>'.$book->isbn.'</td>'.
-                            '<td><img id="book_cover" src="'.$book->image_url.'"></td>'.
-                        '</tr>';
+            if($books){
+                return Response($books);
             }
-            return Response($output);
         }
     }
 
