@@ -10,7 +10,7 @@
   @endif
   <!-- 有数据展示 -->
   <table class='table table-striped' id='books_table'>
-    <thead>
+    <thead class='books_table_thead'>
         <tr>
           <td>Book Name</td>
           <td>Author</td>
@@ -26,13 +26,19 @@
   <div id='no-data'>
     <img src="/images/no_data.png" alt="No data">
   </div>
+  <!-- 图片 遮罩层 -->
+  <section class="mask">
+    <div class="img_detail_box">
+      <!-- <img src="" alt=""> -->
+    </div>
+  </section>
 <section>
 
 <script type="text/javascript">
   // 搜索图书方法
-  let getData = function(){
+  let getData =async function(){
     const value = $('#search').val()
-    $.ajax({
+    await $.ajax({
       type : 'get',
       url : '{{URL::to('books')}}',
       data:{'search':value},
@@ -53,15 +59,36 @@
               }
             }
           )
+          
+          // 图片绑定事件
+          $('body').on('click',(e)=>{
+            if(e.target.id && e.target.id == 'book_cover'){
+              // console.log('点击的是封面图片');
+              $('.img_detail_box').empty().html(
+                // `<img src="${e.target.src}" alt="" class="img_detail">
+                //  <img src="/images/close.png" alt="close" class="close_img">
+                // `
+                `<img src="${e.target.src}" alt="" class="img_detail">
+                 <div class="close_img"></div>
+                `
+              )
+                // 绑定关闭遮罩层事件
+              $('.close_img').on('click',()=>{
+                $('.mask').css('display','none')
+              })
+              $('.mask').css('display','block')
+            }
+          })
 
           $('#no-data').css('display','none')
           $('#books_table').css('display','block')
         }else{
           // 展示兜底
-          $('#no-data').css('display','block')
+          $('#no-data').css('display','flex')
           $('#books_table').css('display','none')
         }
 
+        console.log('获取数据成功');
       }
     })
     
@@ -70,8 +97,11 @@
 
   //页面加载完成
   $(document).ready(
-    function(){
-       getData();
+    async function(){
+ 
+      // 获取数据
+      await getData();
+
     }
   )
 
@@ -79,6 +109,8 @@
   $('#search').on('keyup',function(){
     getData()
   })
+
+
 </script>
 <script type="text/javascript">
   $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
