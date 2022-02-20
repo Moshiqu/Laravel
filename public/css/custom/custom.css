@@ -44,6 +44,7 @@ a:focus {
     top: 0;
     border-bottom: 1px solid #f0f0f0;
     background-color: #fff;
+    z-index: 1;
 }
 
 .header_nav_table{
@@ -116,10 +117,15 @@ a:focus {
     position: relative;
 }
 
-/* .header_nav_table #search_input_tr #search{
-    animation-name: expand;
-    animation-duration: 4s;
-} */
+.header_nav_table #search_input_tr #search{
+    animation-name: lll;
+    animation-duration: 2s;
+}
+
+@keyframes lll {
+    from {width: 200px;}
+    to {width: 160px;}
+}
 
 /* 聚焦 */
 .header_nav_table #search_input_tr #search:focus{
@@ -138,6 +144,7 @@ a:focus {
     top: 50%;
     right: 1.375rem;
     transform: translateY(-50%);
+    /* border-color: transparent; */
 }
 
 .header_nav_table #search_input_tr:hover{
@@ -273,3 +280,44 @@ a:focus {
     font-size: 0.75rem;
     padding-top: 1.5625rem;
 }
+
+/* book request */
+
+.table_custom{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table_custom th,td{
+    padding: 20px 10px;
+}
+
+.table_custom th:last-child{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.table_custom thead tr{
+    background-color: #008c8c;
+    color: #fff;
+}
+
+.table_custom tbody tr:nth-child(odd){
+    background-color: #eee;
+}
+
+.table_custom tbody tr:hover{
+    background-color: #ccc;
+}
+
+.table_custom tbody tr td:first-child{
+    color: #f40;
+}
+
+.table_custom tbody tr td:last-child{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+

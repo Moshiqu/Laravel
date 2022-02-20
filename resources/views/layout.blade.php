@@ -8,8 +8,13 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
   <link href="{{ asset('css/custom/custom.css') }}" rel="stylesheet" type="text/css" />
   <link href="{{ asset('js\sort\css\theme.default.min.css') }}" rel="stylesheet" type="text/css" />
-  <script src="{{ asset('js/app.js') }}" type="text/js"></script>
+
+  <link href="{{ asset('css/custom/jquery-ui.css') }}" rel="stylesheet" type="text/css" />
+  <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" />
+
   <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+  <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+  <script src="{{ asset('js/app.js') }}" type="text/js"></script>
   <script src="{{ asset('js/sort/js/jquery.tablesorter.js') }}"></script>
 </head>
 <body>
@@ -18,13 +23,13 @@
         <table class='header_nav_table'> 
           <tbody class='header_nav_table_body'>
             <tr class='table_left'>
-              <td class="value" ><a href="/books"><img src="/images/logo.jpg" class='logo_box'/></a></td> 
+              <td class="value" ><a href="/"><img src="/images/logo.jpg" class='logo_box'/></a></td> 
             </tr>
             <tr class='table_content container bgw' valign="bottom">
-              <td class="value"><a href="/books"><img src="/images/home.png">Home</a></td> 
+              <td class="value"><a href="/"><img src="/images/home.png">Home</a></td> 
               <td class="value"><a href="/register"><img src="/images/register.png">Register</a></td> 
-              <td class="value"><a href="/books"><img src="/images/cart.png">Cart</a></td> 
-              <td class="value"><a href="/books"><img src="/images/login.png">Login</a></td> 
+              <td class="value"><a href="/"><img src="/images/cart.png">Cart</a></td> 
+              <td class="value"><a href="/"><img src="/images/login.png">Login</a></td> 
               <td class="value"><a href="/"><img src="/images/admin.png">Admin</a></td> 
               <td id='search_input_tr'>
                 <input type="text" id='search' placeholder="Search">

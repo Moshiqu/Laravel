@@ -37,14 +37,14 @@
 <script type="text/javascript">
   // 搜索图书方法
   let getData =async function(){
-    const value = $('#search').val()
+    const value = $('#search').val() || ''
     await $.ajax({
       type : 'get',
       url : '{{URL::to('books')}}',
       data:{'search':value},
       success:function(data){
         let str = ``
-        if(data.length != 0){
+        if(Array.isArray(data) &&data.length != 0){
           data.forEach(element => {
             const {name,author,publisher,price,isbn,image_url} = {...element}
             str += `<tr><td>${name}</td><td>${author}</td><td>${publisher}</td><td>${price}</td><td>${isbn}</td><td><img id="book_cover" src=${image_url}></td></tr>`
@@ -63,11 +63,7 @@
           // 图片绑定事件
           $('body').on('click',(e)=>{
             if(e.target.id && e.target.id == 'book_cover'){
-              // console.log('点击的是封面图片');
               $('.img_detail_box').empty().html(
-                // `<img src="${e.target.src}" alt="" class="img_detail">
-                //  <img src="/images/close.png" alt="close" class="close_img">
-                // `
                 `<img src="${e.target.src}" alt="" class="img_detail">
                  <div class="close_img"></div>
                 `
@@ -87,8 +83,6 @@
           $('#no-data').css('display','flex')
           $('#books_table').css('display','none')
         }
-
-        console.log('获取数据成功');
       }
     })
     
@@ -98,7 +92,6 @@
   //页面加载完成
   $(document).ready(
     async function(){
- 
       // 获取数据
       await getData();
 
@@ -109,7 +102,6 @@
   $('#search').on('keyup',function(){
     getData()
   })
-
 
 </script>
 <script type="text/javascript">

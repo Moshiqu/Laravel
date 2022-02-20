@@ -12,7 +12,6 @@
 */
 
 Route::get('/', 'BookController@index');
-
-// Route::resource('books','BookController');
-
 Route::get('/books','BookController@search');
+
+Route::resource('bookrequest', 'BookRequestController');
