@@ -29,23 +29,23 @@
           <div class="form-group">
               @csrf
               <label for="name">Name:</label>
-              <input type="text" class="form-control" name="name" value='3213asd'/>
+              <input type="text" class="form-control" name="name"/>
           </div>
           <div class="form-group">
               <label for="price">Phone Number:</label>
-              <input type="text" class="form-control" name="phone" value='12345678'/>
+              <input type="text" class="form-control" name="phone" />
           </div>
           <div class="form-group">
               <label for="quantity">Email:</label>
-              <input type="text" class="form-control" name="email" value='91232525@qq.com'/>
+              <input type="text" class="form-control" name="email"/>
           </div>
           <div class="form-group">
               <label for="quantity">Item Name:</label>
-              <input type="text" class="form-control" name="item_name" value='harrypotter321321'/>
+              <input type="text" class="form-control" name="item_name"/>
           </div>
           <div class="form-group">
               <label for="quantity">Pickup Date:</label>
-              <input type="text" class="form-control" name="pickup_date" id='datepicker' />
+              <input type="text" class="form-control" name="pickup_date" id='datepicker'/>
           </div>
           <button type="submit" class="btn btn-primary">Add</button>
       </form>

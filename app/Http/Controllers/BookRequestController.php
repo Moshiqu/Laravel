@@ -39,9 +39,9 @@ class BookRequestController extends Controller
     {
         //
         $request->validate([
-            'name'=>['required','min:6','alpha_num'],
+            'name'=>['required','min:6','max:30','alpha_num'],
             'phone'=> ['required','integer','digits:8'],
-            'email' => ['required','email:rfc,dns'],
+            'email' => ['required','max:30','email:rfc,dns'],
             'item_name' => ['required','min:15','alpha_num'],
             'pickup_date' =>['required','date']
         ]);
@@ -54,7 +54,7 @@ class BookRequestController extends Controller
         ]);
 
         $bookrequest->save();
-        return redirect('/bookrequest')->with('success', 'Stock has been added');
+        return redirect('/bookrequest')->with('success', 'Book request has been added');
     }
 
     /**
@@ -76,7 +76,9 @@ class BookRequestController extends Controller
      */
     public function edit($id)
     {
-        //
+        $book = BookRequest::find($id);
+
+        return view('booksRequest.edit', compact('book'));
     }
 
     /**
@@ -88,7 +90,23 @@ class BookRequestController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name'=>['required','min:6','max:30','alpha_num'],
+            'phone'=> ['required','integer','digits:8'],
+            'email' => ['required','max:30','email:rfc,dns'],
+            'item_name' => ['required','min:15','alpha_num'],
+            'pickup_date' =>['required','date']
+        ]);
+
+        $book = BookRequest::find($id);
+        $book->name = $request->get('name');
+        $book->phone = $request->get('phone');
+        $book->email = $request->get('email');
+        $book->item_name = $request->get('item_name');
+        $book->pickup_date = $request->get('pickup_date');
+        
+        $book->save();
+        return redirect('/bookrequest')->with('success', 'Book request has been updated');
     }
 
     /**
@@ -99,6 +117,8 @@ class BookRequestController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $book = BookRequest::find($id);
+        $book->delete();
+        return redirect('/bookrequest')->with('success', 'Stock has been deleted Successfully');
     }
 }

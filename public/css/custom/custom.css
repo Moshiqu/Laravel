@@ -315,6 +315,14 @@ a:focus {
     color: #f40;
 }
 
+.table_custom tbody tr td:nth-child(2){
+    max-width: 130px;
+}
+
+.table_custom tbody tr td:nth-child(5){
+    max-width: 200px;
+}
+
 .table_custom tbody tr td:last-child{
     display: flex;
     justify-content: space-around;
