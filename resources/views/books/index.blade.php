@@ -32,7 +32,7 @@
       <!-- <img src="" alt=""> -->
     </div>
   </section>
-<section>
+</section>
 
 <script type="text/javascript">
   // 搜索图书方法

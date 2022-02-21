@@ -321,3 +321,14 @@ a:focus {
     align-items: center;
 }
 
+/* bookrequest  */
+
+#add_new_Btn{
+    /* 固定 */
+    position: fixed;
+    right:60px;
+    bottom: 200px;
+    /* 表格内部 */
+    /* float: right;
+    margin: 20px 15px 0 0; */
+}

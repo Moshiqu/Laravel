@@ -6,7 +6,7 @@
     margin-top: 40px;
   }
 </style>
-<div class="card uper">
+<div class="card uper" style='margin-bottom:15px'>
   <div class="card-header">
     Add Share
   </div>
@@ -53,9 +53,15 @@
                 @endforeach
             </tbody>
         </table>
+        <a href="{{ route('bookrequest.create')}}" class="btn btn-success" id='add_new_Btn'>+New</a>
   </div>
 </div>
 
 <script>
+  // $(document).ready(
+  //   function(){
+
+  //   }
+  // )
 </script>
 @endsection
