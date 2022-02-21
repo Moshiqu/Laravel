@@ -1,14 +1,9 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
-<style>
-  .uper {
-    margin-top: 40px;
-  }
-</style>
 <div class="card uper" style='margin-bottom:15px'>
   <div class="card-header">
-    Add Share
+    Book Requests
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -62,11 +57,4 @@
   </div>
 </div>
 
-<script>
-  // $(document).ready(
-  //   function(){
-
-  //   }
-  // )
-</script>
 @endsection

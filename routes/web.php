@@ -14,4 +14,8 @@
 Route::get('/', 'BookController@index');
 Route::get('/books','BookController@search');
 
-Route::resource('bookrequest', 'BookRequestController');
+Route::resource('bookrequest', 'BookRequestController')->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

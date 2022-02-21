@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\BookRequest;
+use Illuminate\Support\Facades\Auth;
 
 class BookRequestController extends Controller
 {
@@ -25,7 +26,7 @@ class BookRequestController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
         return view('booksRequest.create');
     }
 
@@ -36,25 +37,30 @@ class BookRequestController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
-        $request->validate([
-            'name'=>['required','min:6','max:30','alpha_num'],
-            'phone'=> ['required','integer','digits:8'],
-            'email' => ['required','max:30','email:rfc,dns'],
-            'item_name' => ['required','min:15','alpha_num'],
-            'pickup_date' =>['required','date']
-        ]);
-        $bookrequest = new BookRequest([
-            'name' => $request->get('name'),
-            'phone'=> $request->get('phone'),
-            'email'=> $request->get('email'),
-            'item_name'=> $request->get('item_name'),
-            'pickup_date'=> $request->get('pickup_date'),
-        ]);
+    {   
+        if (Auth::check()) {
+            // 用户已经登录了...
+            $request->validate([
+                'name'=>['required','min:6','max:30','alpha_num'],
+                'phone'=> ['required','integer','digits:8'],
+                'email' => ['required','max:30','email:rfc,dns'],
+                'item_name' => ['required','min:15','alpha_num'],
+                'pickup_date' =>['required','date']
+            ]);
+            $bookrequest = new BookRequest([
+                'name' => $request->get('name'),
+                'phone'=> $request->get('phone'),
+                'email'=> $request->get('email'),
+                'item_name'=> $request->get('item_name'),
+                'pickup_date'=> $request->get('pickup_date'),
+            ]);
 
-        $bookrequest->save();
-        return redirect('/bookrequest')->with('success', 'Book request has been added');
+            $bookrequest->save();
+            return redirect('/bookrequest')->with('success', 'Book request has been added');
+        }else{
+            return redirect('/login');
+        }
+
     }
 
     /**
@@ -121,4 +127,5 @@ class BookRequestController extends Controller
         $book->delete();
         return redirect('/bookrequest')->with('success', 'Stock has been deleted Successfully');
     }
+
 }

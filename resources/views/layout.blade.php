@@ -28,8 +28,8 @@
             <tr class='table_content container bgw' valign="bottom">
               <td class="value"><a href="/"><img src="/images/home.png">Home</a></td> 
               <td class="value"><a href="/register"><img src="/images/register.png">Register</a></td> 
-              <td class="value"><a href="/"><img src="/images/cart.png">Cart</a></td> 
-              <td class="value"><a href="/"><img src="/images/login.png">Login</a></td> 
+              <td class="value"><a href="/bookrequest"><img src="/images/cart.png">Book Request</a></td> 
+              <td class="value"><a href="/login"><img src="/images/login.png">Login</a></td>
               <td class="value"><a href="/"><img src="/images/admin.png">Admin</a></td> 
               <td id='search_input_tr'>
                 <input type="text" id='search' placeholder="Search">

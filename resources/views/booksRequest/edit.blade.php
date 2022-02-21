@@ -1,16 +1,6 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
-<style>
-  .uper {
-    margin-top: 40px;
-  }
-</style>
-<script>
-  $( function() {
-    $( "#datepicker" ).datepicker({dateFormat: "yy-mm-dd"});
-  } );
-</script>
   <div class="card uper">
   <div class="card-header">
     Book Request Form
