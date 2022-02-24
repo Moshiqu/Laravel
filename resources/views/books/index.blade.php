@@ -8,8 +8,13 @@
       {{ session()->get('success') }}  
     </div><br />
   @endif
-  <article>
-      <!-- 有数据展示 -->
+  <div class="line"></div>
+  <article class='article_box'>
+    <h2>Book List</h2>
+    
+    <div class='divide_line_article'></div>
+
+    <!-- 有数据展示 -->
       <table class='table table-striped' id='books_table'>
         <thead class='books_table_thead'>
             <tr>
@@ -17,8 +22,8 @@
               <td>Author</td>
               <td>Publisher</td>
               <td>Price</td>
-              <td>ISBN</td>
-              <td>Cover</td>
+              <td style="text-align:center;">ISBN</td>
+              <td style="text-align:center;">Cover</td>
           </tr>
           </thead>
           <tbody id='search_table_body'></tbody>
@@ -33,6 +38,25 @@
           <!-- <img src="" alt=""> -->
         </div>
       </section>
+  </article>
+  <div class="line"></div>
+  <article class="article_box">
+    <h2>Home</h2>
+    
+    <div class='divide_line_article'></div>
+    <div class="articleBody">
+    	<figure class="img_right">
+	    	<img src="images/shop.jpg" width="620" height="340" />
+      </figure>
+      <article>
+        <h5 style="margin-bottom:30px;color:blue">
+          Welcome to our online bookstore!
+        </h5>
+        <video width="340" controls autoplay>
+          <source src="big_buck_bunny.mp4" type="video/mp4" />
+        </video>
+      </article>
+    </div>
   </article>
 </section>
 
@@ -49,7 +73,7 @@
         if(Array.isArray(data) &&data.length != 0){
           data.forEach(element => {
             const {name,author,publisher,price,isbn,image_url} = {...element}
-            str += `<tr><td>${name}</td><td>${author}</td><td>${publisher}</td><td>${price}</td><td>${isbn}</td><td><img id="book_cover" src=${image_url}></td></tr>`
+            str += `<tr><td>${name}</td><td>${author}</td><td>${publisher}</td><td class="price_td">${price}</td><td>${isbn}</td><td><img id="book_cover" src=${image_url}></td></tr>`
           });
           // 填充表格tbody
           $('#search_table_body').empty().html(str)

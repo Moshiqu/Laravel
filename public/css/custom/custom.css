@@ -1,6 +1,6 @@
 body{
     background-color: #f5f5f5;
-    padding-top: 3.625rem;
+    /* padding-top: 3.625rem; */
     padding-bottom: 0.75rem;
     position: relative;
 }
@@ -219,11 +219,15 @@ a:focus {
     height: 200px;
 }
 
+.price_td,
+.isbn_td{
+    text-align: center;
+}
+
 /* 首页搜索结果表格 */
 #books_table{
     margin-top: 0;
-    padding-top: 15px;
-    background-color: #f5f5f5;
+    background-color: transparent;
 }
 
 #books_table .books_table_thead tr td{
@@ -344,10 +348,149 @@ a:focus {
     justify-content: center;
     align-items: center;
     /* 表格内部 */
-    /* float: right;
+    /* float: right; 
     margin: 20px 15px 0 0; */
 }
 
 .uper {
     margin-top: 40px;
   }
+
+/* 首页nav导航ul */
+.line {
+    height: 1px;
+    background-color: darkgrey;
+    margin: 1em 0 3em 0;
+    overflow: hidden;
+}
+
+.divide_line_article{
+    height:1px;
+	overflow:hidden;
+	/* The dividing line inside of the article is darker: */
+	background-color:#15242a;
+	border-bottom-color:#204656;
+	margin:1.3em 0;
+}
+
+header{
+    display: flex;
+    background-color: rgba(211, 211, 211, .6);
+    width: 960px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+header hgroup a {
+    display: block;
+}
+
+header hgroup a .logo_img {
+    width: 120px;
+    border-radius: 15px;
+}
+
+.nav{
+    background-color: rgba(211, 211, 211, .8);
+    position: absolute;
+    right: 50%;
+    bottom: 10px;
+    transform: translateX(50%);
+    height: 42px;
+    border:  1px solid #fff;
+    border-radius: 10px;
+}
+
+.nav #nav_ul{
+    display: flex;
+    list-style-type:none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav #nav_ul li{
+    margin: auto;
+    padding: 0 10px;
+}
+
+.nav #nav_ul li img{
+    height: 30px;
+}
+
+/* 搜索框 */
+.aside{
+    position: absolute;
+    left: 78%;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent !important;
+}
+
+
+.aside #search{
+    animation-name: lll;
+    animation-duration: 1s;
+    border-radius: 10px;
+    outline: none;
+    overflow: hidden;
+    border: none;
+    height: 30px;
+    width: 160px;
+    padding:0 30px 0 15px;
+}
+
+@keyframes lll {
+    from {width: 200px;}
+    to {width: 160px;}
+}
+
+/* 聚焦 */
+.aside #search:focus{
+    animation-name: expand;
+    animation-duration: 1s;  
+    animation-fill-mode: forwards;
+}
+
+@keyframes expand {
+    from {width: 160px;}
+    to {width: 200px;}
+}
+
+.aside .search_icon{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    /* border-color: transparent; */
+}
+
+.aside:hover{
+    background-color: #fff;
+}
+
+.article_box{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(211,211,211,.6);
+}
+
+.articleBody::after{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.article_box .articleBody .img_right{
+    border: 3px solid #142830;
+    float: right;
+    height: 300px;
+    margin-left: 15px;
+    overflow: hidden;
+    width: 500px;
+}

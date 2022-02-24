@@ -19,31 +19,27 @@
 </head>
 <body>
   <header> 
-    <nav class='header_nav'> 
-        <table class='header_nav_table'> 
-          <tbody class='header_nav_table_body'>
-            <tr class='table_left'>
-              <td class="value" ><a href="/"><img src="/images/logo.jpg" class='logo_box'/></a></td> 
-            </tr>
-            <tr class='table_content container bgw' valign="bottom">
-              <td class="value"><a href="/"><img src="/images/home.png">Home</a></td> 
-              <td class="value"><a href="/register"><img src="/images/register.png">Register</a></td> 
-              <td class="value"><a href="/bookrequest"><img src="/images/cart.png">Book Request</a></td> 
-              <td class="value"><a href="/login"><img src="/images/login.png">Login</a></td>
-              <td class="value"><a href="/"><img src="/images/admin.png">Admin</a></td> 
-              <td id='search_input_tr'>
-                <aside>
-                  <input type="text" id='search' placeholder="Search">
-                  <img src="/images/search_icon.png" class='search_icon'>
-                </aside>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-    </nav> 
+    <hgroup>
+      <a href="/">
+        <img src="/images/logo.jpg" class='logo_img' />
+      </a>
+    </hgroup>
+    <nav class='nav'>
+      <ul id='nav_ul'>
+        <li><a href="/"><img src="/images/home.png"></a></li>
+        <li><a href="/register"><img src="/images/register.png"></a></li>
+        <li><a href="/bookrequest"><img src="/images/cart.png"></a></li>
+        <li><a href="/login"><img src="/images/login.png"></a></li>
+        <li><a href="/"><img src="/images/admin.png"></a></li>
+      </ul>
+    </nav>
+    <aside class='aside'>
+      <input type="text" id='search' placeholder="Search by book name">
+      <img src="/images/search_icon.png" class='search_icon'>
+    </aside>
   </header>
   
-  <section class="container">
+  <section class="container" style="padding:0;">
     @yield('content')
   </section>
 
