@@ -8,30 +8,32 @@
       {{ session()->get('success') }}  
     </div><br />
   @endif
-  <!-- 有数据展示 -->
-  <table class='table table-striped' id='books_table'>
-    <thead class='books_table_thead'>
-        <tr>
-          <td>Book Name</td>
-          <td>Author</td>
-          <td>Publisher</td>
-          <td>Price</td>
-          <td>ISBN</td>
-          <td>Cover</td>
-       </tr>
-      </thead>
-      <tbody id='search_table_body'></tbody>
-  </table>
-  <!-- 无数据展示 -->
-  <div id='no-data'>
-    <img src="/images/no_data.png" alt="No data">
-  </div>
-  <!-- 图片 遮罩层 -->
-  <section class="mask">
-    <div class="img_detail_box">
-      <!-- <img src="" alt=""> -->
-    </div>
-  </section>
+  <article>
+      <!-- 有数据展示 -->
+      <table class='table table-striped' id='books_table'>
+        <thead class='books_table_thead'>
+            <tr>
+              <td>Book Name</td>
+              <td>Author</td>
+              <td>Publisher</td>
+              <td>Price</td>
+              <td>ISBN</td>
+              <td>Cover</td>
+          </tr>
+          </thead>
+          <tbody id='search_table_body'></tbody>
+      </table>
+      <!-- 无数据展示 -->
+      <div id='no-data'>
+        <img src="/images/no_data.png" alt="No data">
+      </div>
+      <!-- 图片 遮罩层 -->
+      <section class="mask">
+        <div class="img_detail_box">
+          <!-- <img src="" alt=""> -->
+        </div>
+      </section>
+  </article>
 </section>
 
 <script type="text/javascript">

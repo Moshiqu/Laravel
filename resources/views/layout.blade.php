@@ -32,8 +32,10 @@
               <td class="value"><a href="/login"><img src="/images/login.png">Login</a></td>
               <td class="value"><a href="/"><img src="/images/admin.png">Admin</a></td> 
               <td id='search_input_tr'>
-                <input type="text" id='search' placeholder="Search">
-                <img src="/images/search_icon.png" class='search_icon'>
+                <aside>
+                  <input type="text" id='search' placeholder="Search">
+                  <img src="/images/search_icon.png" class='search_icon'>
+                </aside>
               </td>
             </tr>
           </tbody>

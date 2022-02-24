@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBookRequestsTable extends Migration
+class CreateBookRequests extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateBookRequestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('book_request', function (Blueprint $table) {
+          Schema::create('book_requests', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->integer('phone');
             $table->string('email');
             $table->string('item_name');
-            $table->string('pickup_date');
+            $table->date('pickup_date');
             $table->timestamps();
         });
     }
