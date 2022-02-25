@@ -90,6 +90,7 @@ a:focus {
     height: 3.625rem;
     align-items: center;
     position: relative;
+    justify-content: space-evenly;
 }
 
 .header_nav_table .table_content td{
@@ -277,12 +278,9 @@ a:focus {
 
 .footer{
     width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
     color: #c8c8c8;
     font-size: 0.75rem;
-    padding-top: 1.5625rem;
+    margin-top: 1.5625rem;
 }
 
 /* book request */
@@ -373,7 +371,7 @@ a:focus {
 	margin:1.3em 0;
 }
 
-header{
+/* header{
     display: flex;
     background-color: rgba(211, 211, 211, .6);
     width: 960px;
@@ -398,9 +396,9 @@ header hgroup a .logo_img {
     right: 50%;
     bottom: 10px;
     transform: translateX(50%);
-    height: 42px;
     border:  1px solid #fff;
     border-radius: 10px;
+    padding: 5px;
 }
 
 .nav #nav_ul{
@@ -415,15 +413,95 @@ header hgroup a .logo_img {
     padding: 0 10px;
 }
 
-.nav #nav_ul li img{
-    height: 30px;
+.nav #nav_ul li a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.nav #nav_ul li img{
+    height: 30px;
+} */
+
 /* 搜索框 */
-.aside{
+/* .aside{
     position: absolute;
     left: 78%;
     bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent !important;
+}
+
+
+.aside #search{
+    animation-name: lll;
+    animation-duration: 1s;
+    border-radius: 10px;
+    outline: none;
+    overflow: hidden;
+    border: none;
+    height: 30px;
+    width: 160px;
+    padding:0 30px 0 15px;
+}
+
+@keyframes lll {
+    from {width: 200px;}
+    to {width: 160px;}
+} */
+
+/* 聚焦 */
+/* .aside #search:focus{
+    animation-name: expand;
+    animation-duration: 1s;  
+    animation-fill-mode: forwards;
+}
+
+@keyframes expand {
+    from {width: 160px;}
+    to {width: 200px;}
+}
+
+.aside .search_icon{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.aside:hover{
+    background-color: #fff;
+} */
+
+.article_box{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(211,211,211,.6);
+}
+
+.articleBody::after{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.article_box .articleBody .img_right{
+    border: 3px solid #142830;
+    float: right;
+    height: 300px;
+    margin-left: 15px;
+    overflow: hidden;
+    width: 500px;
+}
+
+.aside{
+    position: absolute;
+    left: 78%;
+    top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -465,32 +543,37 @@ header hgroup a .logo_img {
     top: 50%;
     right: 10px;
     transform: translateY(-50%);
-    /* border-color: transparent; */
 }
 
 .aside:hover{
     background-color: #fff;
 }
 
-.article_box{
-    padding: 20px;
-    border-radius: 10px;
-    background-color: rgba(211,211,211,.6);
+
+.contact_us{
+    text-align: center;
 }
 
-.articleBody::after{
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
+.contact_us .contact_us_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
-.article_box .articleBody .img_right{
-    border: 3px solid #142830;
-    float: right;
-    height: 300px;
-    margin-left: 15px;
-    overflow: hidden;
-    width: 500px;
+.contact_us div{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.contact_us label{
+    float: left;
+    width: 65px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.contact_us_form .submit_btn{
+    margin-top: 10px;
+    width: 250px;
 }

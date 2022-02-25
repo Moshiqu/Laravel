@@ -9,8 +9,12 @@
     </div><br />
   @endif
   <div class="line"></div>
-  <article class='article_box'>
+  <article class='article_box' style='position:relative''>
     <h2>Book List</h2>
+    <aside class='aside'>
+      <input type="text" id='search' placeholder="Search">
+      <img src="/images/search_icon.png" class='search_icon'>
+    </aside>
     
     <div class='divide_line_article'></div>
 
@@ -39,6 +43,8 @@
         </div>
       </section>
   </article>
+
+  <!-- home -->
   <div class="line"></div>
   <article class="article_box">
     <h2>Home</h2>
@@ -55,6 +61,55 @@
         <video width="340" controls autoplay>
           <source src="big_buck_bunny.mp4" type="video/mp4" />
         </video>
+      </article>
+    </div>
+  </article>
+
+  <!-- about -->
+  <div class="line"></div>
+  <article class="article_box">
+    <h2>About</h2>
+    
+    <div class='divide_line_article'></div>
+    <div class="articleBody">
+    	<figure class="img_right">
+	    	<img src="images/reading.jpg" width="620" height="340" />
+      </figure>
+      <article>
+        <h5 style="margin-bottom:30px;color:blue">
+          Welcome to our online bookstore!
+        </h5>
+        <p>We are online book store. We have thousands of books in stock. We can search the books by ISBN or author. We accept Paypal and Visa Credit Cards. We will ship the books within 1-2 business days.</p>
+      </article>
+    </div>
+  </article>
+
+  <!-- contact -->
+  <div class="line"></div>
+  <article class="article_box">
+    <h2>Contact Us</h2>
+    
+    <div class='divide_line_article'></div>
+    <div class="articleBody">
+      <article class='contact_us'>
+        <h5>Please provide us your info so that we can contact you.</h5>
+        <form class="contact_us_form">
+          <div>
+            <label for='username'>Name:</label>
+            <input type="text" placeholder='enter your name' id='username'>
+          </div>
+          <div>
+            <label for='useremail'>E-mail:</label>
+            <input type="text" placeholder='enter your email address' id='useremail'>
+          </div>
+          <div>
+            <label for='usermessage'>Message:</label>
+            <textarea id='usermessage'></textarea>
+          </div>
+          <div>
+            <button class='btn btn-primary submit_btn' id='submit_btn'>submit</button>
+          </div>
+        </form>
       </article>
     </div>
   </article>
@@ -127,6 +182,11 @@
   // 绑定搜索事件
   $('#search').on('keyup',function(){
     getData()
+  })
+  
+  // 绑定搜索事件
+  $('#submit_btn').on('click',function(){
+    return false
   })
 
 </script>
