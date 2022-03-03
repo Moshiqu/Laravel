@@ -132,6 +132,7 @@
           });
           // 填充表格tbody
           $('#search_table_body').empty().html(str)
+          $("#books_table").trigger("update")
           $('#books_table').tablesorter({
             headers: { 
                 5: { 
