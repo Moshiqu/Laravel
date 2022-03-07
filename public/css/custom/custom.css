@@ -350,6 +350,19 @@ a:focus {
     margin: 20px 15px 0 0; */
 }
 
+#back_home_Btn{
+    position: fixed;
+    right:60px;
+    bottom: 120px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .uper {
     margin-top: 40px;
   }
@@ -577,3 +590,4 @@ header hgroup a .logo_img {
     margin-top: 10px;
     width: 250px;
 }
+

@@ -53,7 +53,10 @@
                 @endforeach
             </tbody>
         </table>
-        <a href="{{ route('bookrequest.create')}}" class="btn btn-success" id='add_new_Btn'>+New</a>
+        <a href="{{ route('bookrequest.create')}}" class="btn btn-success" id='add_new_Btn'>Create</a>
+        <a href="/" class="btn btn-info" id='back_home_Btn'>
+          <img src="./home.svg" alt="book">
+        </a>
   </div>
 </div>
 
