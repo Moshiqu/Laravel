@@ -348,6 +348,7 @@ a:focus {
     /* 表格内部 */
     /* float: right; 
     margin: 20px 15px 0 0; */
+    font-weight: 900 !important;
 }
 
 #back_home_Btn{
